@@ -1,19 +1,23 @@
 1. What does thread of execution means in JavaScript?
 ```js
-//Thread of exacution is the sequence in which the codes gets exectued in javascript.
+//Thread of execution is the sequence in which the codes gets exectued in javascript.
 ```
 2. Where the JavaScript code gets executed?
 ```js
-//All the javascript codes get executed with Global execution context
+//All the javascript codes get executed in javascript engine.
 ```
 3. What does context means in Global Execution Context?
-
+```js
+//Context means environment in which codes get executed
+```
 4. When do you create a global execution context.
 ```js 
 //Global execution context get created automatically by javascript engine whenever it is running out code for the first time.
 ```
 5. Execution context consists of what all things?
-
+```js
+//It consist of two parts : one where we store data , variables etcc and other where we execute our codes
+```
 6. What are the different types of execution context?
 ```js
 // the different types of exection context are:Global execution context and  function execution context.
@@ -40,7 +44,7 @@ function sayHello(){
 var userMsg = sayHello(user);
 ```
 
-<!-- Put your image here -->
+![./img/gec1.jpg]
 
 ![](./img/image-name.jpg)
 
@@ -59,6 +63,8 @@ var percentageProfit = getPercentage(400, 200);
 ```
 
 <!-- Put your image here -->
+![./img/gec2.jpg]
+
 
 ![](./img/image-name.jpg)
 
@@ -80,5 +86,4 @@ var whoAmIAgain = customeMessage(12);
 ```
 
 <!-- Put your image here -->
-
-![](./img/image-name.jpg)
+![./img/gec3.jpg]
