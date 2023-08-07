@@ -4,15 +4,19 @@
 function percentage(marks, total) {
   return (marks * 100) / total;
 }
-//first-form
-let percent = percentage(marks, total) {
+
+let percent = function percentage(marks, total) {
+  return (marks * 100) / total;
+}
+let percent = function(marks, total) {
   return (marks * 100) / total;
 }
 
-//second-form
 let percentage = (marks, total) => {
   return (marks * 100) / total;
 }
+
+let percentage = (marks, total) => (marks * 100) / total;
 ```
 
 2. Write Function Declaration or Function Expression next to the function.
@@ -61,6 +65,7 @@ let square = function(side) {
 4. Why is a function call an expression in JavaScript?
 ```js
 //A function call is an expression that includes the name of the function being called or the value of a function pointer and, optionally, the arguments being passed to the function.
+a function call always returns a value i.e it is an expression.
 ```
 5. Write VALID and INVALID next to each example below with the reason.
 
@@ -69,9 +74,9 @@ function add(a, b) {
   return a + b;
 }
 
-let five = add(2, 3); // valid
+let five = add(2, 3); // valid 5
 five = add; // valid
-five = five(10, 11); //valid
+five = five(10, 11); //valid 21
 five = function () {
   return 'Hello';
 }; // invalid
@@ -79,19 +84,14 @@ five = function () {
 
 6. What is the difference between function definition and function call? Explain with an example.
 ```js
-//A function expression is similar to a function declaration, but the only difference is  that it can be stored in a variable. As soon as the function is defined with an expression, it is invoked.
-for example
-function hello(){
-  console.log("Hello world!")
-} --is function declaration 
-whereas,
-let var = function hello(){
-  console.log("Hello world!")
-} --is function expression
+function add() //declaration
+
+add() //call
 ```
 7. What is the similarities between function definition and function call?
 ```js
-//The similarities between function definition and function call  is that both are used to declare and define a function in javascript.
+//function declaration is an expression(function is an object)
+//function call is an expression(function always returns a value)
 ```
 8. Is the code below valid or invalid. Explain with reason.
 
@@ -100,7 +100,7 @@ function hello() {
   console.log('Hello World!');
 }
 
-hello.user = 'Sam'; // invalid
+hello.user = 'Sam'; // valid
 ```
 
 9. What is higher order function explain with an example.
