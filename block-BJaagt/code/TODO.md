@@ -21,25 +21,40 @@ The above code will throw an error `Reference Error username is not defined`.
 }
 console.log(useranme); // output
 ```
+```js
+//In the above code we are looking for the variable named username.There is no such variable in global scope .The variable is inside a function and we can't access the variable defines inside a function from outside.
 
+//The above code will throw an error `Reference Error username is not defined`.
+
+```
 3. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
 if (true) {
   let username = 'Arya';
 }
-console.log(useranme); // output
+console.log(useranme); // Reference Error username is not defined
 ```
+```js
+//In the above code we are looking for the variable named username.There is no such variable in global scope .The variable is inside a function and we can't access the variable defines inside a function from outside.
 
+//The above code will throw an error `Reference Error username is not defined`.
+
+```
 4. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
 if (true) {
   var username = 'Arya';
 }
-console.log(useranme); // output
+console.log(useranme); // Reference Error username is not defined
 ```
+```js
+//In the above code we are looking for the variable named username.There is no such variable in global scope .The variable is inside a function and we can't access the variable defines inside a function from outside.
 
+//The above code will throw an error `Reference Error username is not defined`.
+
+```
 5. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
@@ -57,7 +72,7 @@ let username = 'John';
 if (true) {
   let username = 'Arya';
 }
-console.log(useranme); // output
+console.log(useranme); // John
 ```
 
 7. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
