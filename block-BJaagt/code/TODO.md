@@ -22,9 +22,9 @@ The above code will throw an error `Reference Error username is not defined`.
 console.log(useranme); // output
 ```
 ```js
-//In the above code we are looking for the variable named username.There is no such variable in global scope .The variable is inside a function and we can't access the variable defines inside a function from outside.
+//In the above code we are looking for the variable named username.Which is defined inside the block using const which creates the scope therefore we cannot access it .
 
-//The above code will throw an error `Reference Error username is not defined`.
+//The above code will throw an error ` username is not defined`.
 
 ```
 3. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -36,7 +36,7 @@ if (true) {
 console.log(useranme); // Reference Error username is not defined
 ```
 ```js
-//In the above code we are looking for the variable named username.There is no such variable in global scope .The variable is inside a function and we can't access the variable defines inside a function from outside.
+//In the above code we are looking for the variable named username.Which is defined inside the block using let which creates the scope therefore we cannot access it .
 
 //The above code will throw an error `Reference Error username is not defined`.
 
@@ -47,12 +47,10 @@ console.log(useranme); // Reference Error username is not defined
 if (true) {
   var username = 'Arya';
 }
-console.log(useranme); // Reference Error username is not defined
+console.log(useranme); // Arya
 ```
 ```js
-//In the above code we are looking for the variable named username.There is no such variable in global scope .The variable is inside a function and we can't access the variable defines inside a function from outside.
 
-//The above code will throw an error `Reference Error username is not defined`.
 
 ```
 5. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -62,7 +60,7 @@ let username = 'John';
 if (true) {
   var username = 'Arya';
 }
-console.log(useranme); // output
+console.log(useranme); // redeclaration of let username
 ```
 
 6. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -83,7 +81,7 @@ function sayHello() {
   let username = 'Arya';
 }
 sayHello();
-console.log(useranme); // output
+console.log(useranme); // John
 ```
 
 8. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -94,12 +92,34 @@ for (var i = 0; i < 10; i++) {
 }
 console.log(i, 'Second'); // output
 ```
+0 First 
+1 First
+2 First 
+3 First 
+4 First 
+5 First 
+6 First 
+7 First 
+8 First 
+9 First 
+10 Second
+
 
 9. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
 for (let i = 0; i < 10; i++) {
-  console.log(i, 'First'); // output
+  console.log(i, 'First'); // 0 First 
+1 First
+2 First 
+3 First 
+4 First 
+5 First 
+6 First 
+7 First 
+8 First 
+9 First 
 }
-console.log(i, 'Second'); // output
+console.log(i, 'Second'); // i is not defined
+because there is no value of i in the global scope as let creates value within he scope but not in global scope.
 ```
