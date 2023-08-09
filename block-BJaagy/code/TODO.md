@@ -1,4 +1,19 @@
 1. Create a function by your choice that accepts a callback function.
+```js
+function sumOfN(arr , cb){
+  let final = [];
+  for (let elm of arr){
+    final.push(cb(elm));
+  }
+  return final;
+}
+ 
+ function sumBy10(n){
+  return n + 10;
+ }
+
+ sumOfN([1,3,6,9] , sumBy10);
+```
 
 2. Create a function by you choice that returns a function reference.
 
@@ -9,7 +24,14 @@
 Have `map` return a new array filled with values that are the result of the 'callback' function on each element of the input array.
 
 ```js
-// Your code goes here
+// 
+function map(arr , cb){
+  let final = [];
+  for (let elm of arr){
+    final.push(cb(elm));
+  }
+  return final;
+}
 
 // Test Your Code
 function multiplyByTwo(n) {
