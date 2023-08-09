@@ -57,7 +57,9 @@ console.log(alphabet); //prints 'abcd'
 ```
 
 5. Create higher-order function called `filter` takes an array and a callback, and runs the callback on each element of the array if the return value of callback is `truthy` store in new array return the new array.
+```js
 
+```
 ```js
 // Test Your Code
 
