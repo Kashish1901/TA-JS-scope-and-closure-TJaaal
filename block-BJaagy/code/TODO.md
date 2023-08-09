@@ -1,21 +1,23 @@
 1. Create a function by your choice that accepts a callback function.
 ```js
-function sumOfN(arr , cb){
-  let final = [];
-  for (let elm of arr){
-    final.push(cb(elm));
-  }
-  return final;
+function sum(cb){
+  return cb(2);
 }
- 
- function sumBy10(n){
-  return n + 10;
- }
 
- sumOfN([1,3,6,9] , sumBy10);
+outer(function increment(num){
+  return num + 1;
+})
 ```
 
 2. Create a function by you choice that returns a function reference.
+```js
+function sum(cb){
+  function increment(num){
+  return num + 1;
+}
+  return cb(2);
+}
+```
 
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
@@ -46,7 +48,13 @@ multiplyByTwo(2); //-> 4
 
 ```js
 // Your code goes here
-
+function forEach(arr , cb){
+  let final = [];
+  for (let elm of arr){
+    final.push(cb(elm));
+  }
+  return final;
+}
 // Test Your Code
 let alphabet = '';
 let letters = ['a', 'b', 'c', 'd'];
@@ -59,8 +67,17 @@ console.log(alphabet); //prints 'abcd'
 5. Create higher-order function called `filter` takes an array and a callback, and runs the callback on each element of the array if the return value of callback is `truthy` store in new array return the new array.
 ```js
 
-```
-```js
+
+function filter(arr , cb){
+ let final = [];
+  for (let elm of arr){
+   if (cb(elm)){
+    final.push((elm));
+   }
+  }
+  return final;
+}
+
 // Test Your Code
 
 var numbers = [1, 3, 5, 4, 7, 89, 234, 20];
