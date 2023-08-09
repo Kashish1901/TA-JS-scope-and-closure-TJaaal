@@ -1,7 +1,7 @@
 Find the output of the code snippets below:
 
 ```js
-console.log(numA + numB); //NaN or undefined
+console.log(numA + numB); //NaN 
 var numA = 21,
   numB = 30;
 ```
@@ -9,7 +9,7 @@ var numA = 21,
 Find the output of the code snippets below:
 
 ```js
-console.log(numA + numB); //can't use variable that is not initialized
+console.log(numA + numB); //error
 let numA = 21,
   numB = 30;
 ```
@@ -47,7 +47,7 @@ function sayHello() {
 Find the output of the code snippets below:
 
 ```js
-sayHello(); // username not defined
+sayHello(); // error
 let username = "Tyrion";
 function sayHello() {
   console.log(username);
