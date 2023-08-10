@@ -28,6 +28,7 @@ counter.value(); // 2
 counter.decrement(); // undefined
 counter.value(); // 1
 ```
+![](../img/dig-1.jpg)
 
 2. Create the execution context diagram and write the output.
 
@@ -65,3 +66,4 @@ counter1.decrement();
 console.log(counter1.value()); // 1
 console.log(counter2.value()); // 0
 ```
+![](../img/dig-2.jpg)
