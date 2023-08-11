@@ -4,9 +4,10 @@
 
 ```js
 function outer(str){
- return function sayHello(){
-alerts `${str}`;
-  }
+ let sayHello = function() {
+  alert(str);
+ }
+ sayHello();
 }
 
 ```
@@ -14,11 +15,13 @@ alerts `${str}`;
 2. Write a function `delay` that accepts two arguments, a callback and the wait for the time in milliseconds (1000 ms is 1 second). `delay` should return a function that, when invoked waits for the specified amount of time before executing. (Use setTimeout)
 
 ```js
-function delay(cb , time){
-  function setTimeout(() => {
-
-  } , 5000);
+function delay(cb , ms){
+return function() {
+  setTimeout(cb , ms);
 }
+}
+
+
 ```
 
 3. Write a function with a closure. The first function should only take one argument, someone's last name, and return the inner function. The returned `inner` function should take one more argument, someone's first name. When inner function when called it should console.log both the first name and the last name with a space.
@@ -46,13 +49,16 @@ lastNameLee('Lynne'); //logs 'Lynne Lee'
 4. Create a `storyWriter` function that returns an object with two methods. One method, `addWords` adds a word to your story and returns the story while the other one, `erase`, resets the story back to an empty string. Here is an implementation:
 
 ```js
-function storyWriter(text) {
+function storyWriter() {
+let story = "";
  return {
-  addWords : function() {
-let story = text
+  addWords : function(text) {
+ story += text;
+ return story;
   },
   erase : function() {
-    
+story = "";
+return story;
   }
  }
 }
@@ -76,14 +82,12 @@ When `forEach` function is called it returns another function. When the returned
 ```js
 function forEach(arr) {
  let index = 0;
- return function(arr , i) {
-  return (let elm of arr){
-    elm[i];
-  };
+ return function(){
+  return arr[index++];
  }
 }
 
-let next = [1, 2, 3, 4, 5];
+let next = forEach([1, 2, 3, 4, 5]);
 next(); // 1
 next(); // 2
 next(); // 3
@@ -177,8 +181,12 @@ arya.setLastName('Lannister'); // "Jon Lannister"
 The returned function accepts a string (children) and returns the children with the tag you passed.
 
 ```js
-function createTag() {
-  
+function createTag(tag) {
+  return function(child){
+    let elm = document.createElement(tag);
+    elm.innerText = child;
+    return elm;
+  }
 }
 
 let bold = createTag('b');
