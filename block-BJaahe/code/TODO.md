@@ -3,21 +3,34 @@
 1. Write a function, `outer` that takes an input `string`. Inside the function `outer` define another function expression named `sayHello` which alerts the `input`. `sayHello` should be call immediately after it is defined.
 
 ```js
-// Your code goes here
+function outer(str){
+ return function sayHello(){
+alerts `${str}`;
+  }
+}
+
 ```
 
 2. Write a function `delay` that accepts two arguments, a callback and the wait for the time in milliseconds (1000 ms is 1 second). `delay` should return a function that, when invoked waits for the specified amount of time before executing. (Use setTimeout)
 
 ```js
-// Your code goes here
+function delay(cb , time){
+  function setTimeout(() => {
+
+  } , 5000);
+}
 ```
 
 3. Write a function with a closure. The first function should only take one argument, someone's last name, and return the inner function. The returned `inner` function should take one more argument, someone's first name. When inner function when called it should console.log both the first name and the last name with a space.
 
 ```js
-function lastName() {
-  //  Your code goes here
-}
+ function lastName(lastName){
+   return function firstName(firstName){
+   console.log(`${firstName} ${lastName}`);
+  }                                                                                       
+} 
+
+
 
 let lastNameLee = lastName('lee'); // logs nothing
 lastNameLee('Brett'); //logs 'Brett Lee'
@@ -33,8 +46,15 @@ lastNameLee('Lynne'); //logs 'Lynne Lee'
 4. Create a `storyWriter` function that returns an object with two methods. One method, `addWords` adds a word to your story and returns the story while the other one, `erase`, resets the story back to an empty string. Here is an implementation:
 
 ```js
-function storyWriter() {
-  // Your code goes here
+function storyWriter(text) {
+ return {
+  addWords : function() {
+let story = text
+  },
+  erase : function() {
+    
+  }
+ }
 }
 
 // Test
@@ -54,8 +74,13 @@ storyOfMyLife.erase(); // ''
 When `forEach` function is called it returns another function. When the returned function is called it returns the element from the array at specific index. Every time you call the returned function the value of index should increment.
 
 ```js
-function forEach() {
-  // Your code goes here
+function forEach(arr) {
+ let index = 0;
+ return function(arr , i) {
+  return (let elm of arr){
+    elm[i];
+  };
+ }
 }
 
 let next = [1, 2, 3, 4, 5];
@@ -72,7 +97,9 @@ The returned function accepts a string `prefix` and returns `prefix` and `title`
 
 ```js
 function addDesignation(title) {
-  // your code goes here
+  return function (prefix){
+    return `${prefix}  ${title}`;
+  }
 }
 
 let sales = addDesignation('Salesman');
@@ -90,8 +117,23 @@ manager('Head'); // Head Manager
 - `current` will return the current salary returns the updated salary
 
 ```js
-function changeSalary() {
-  // Your code goes here
+function changeSalary(currentSalary) {
+  
+  return {
+    raise: function () {
+     let sal = currentSalary + 500 ;
+    return sal;
+    } ,
+    lower:function () {
+    let sal = currentSalary  - 500 ;
+    return sal;
+    } ,
+    current: function() {
+     let sal = currentSalary ;
+    return sal;
+    }
+    
+  }
 }
 
 let sam = changeSalary(2000);
@@ -108,8 +150,22 @@ arya.lower(); // 3500
 - `setLastName`: accepts a parameter last name using which updates the firstName and return the updated full name
 
 ```js
-// Your code goes here
 
+function nameFactory(firstName , lastName) {
+  
+  return {
+    getFullName: function () {
+     return `${firstName} + ${lastName}`;
+    } ,
+    setFirstName:function (firstName) {
+     return `${firstName} + ${lastName}`;
+    } ,
+    setLastName: function(lastName) {
+     return `${firstName} + ${lastName}`;
+    }
+    
+  }
+}
 let arya = nameFactory('Arya', 'Stark');
 arya.getFullName(); // "Arya Stark"
 arya.setFirstName('Jon'); // "Jon Stark"
@@ -122,7 +178,7 @@ The returned function accepts a string (children) and returns the children with 
 
 ```js
 function createTag() {
-  // your code goes here
+  
 }
 
 let bold = createTag('b');
