@@ -185,7 +185,7 @@ console.log(name);
 ```
 ```js
 output:
-//"" or undefined
+//name is not defined
 ```
 13. Guess the output of the code below with a reason.
 
@@ -209,7 +209,7 @@ console.log(name);
 ```
 ```js
 output:
-//"" or undefined
+//name is not defined
 ```
 
 15. Guess the output of the code below with a reason.
@@ -400,7 +400,7 @@ outer();
 //output:
 I love this movie called GONE GIRL
 
-30. Using reduce find the final value when the initial value passed is `100`. You have to pass the output of one function into the input of next function in the array `allFunctions` starts with `addOne` ends with `half`.
+27. Using reduce find the final value when the initial value passed is `100`. You have to pass the output of one function into the input of next function in the array `allFunctions` starts with `addOne` ends with `half`.
 
 ```js
 const addOne = (num) => {
@@ -424,6 +424,6 @@ let allFunctions = [
   multiplyThree,
   half,
 ];
-
+ allFunctions.reduce((acc , cv) => cv(acc) , 100);
 // Answer is: 447
 ```
