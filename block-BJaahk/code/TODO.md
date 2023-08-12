@@ -6,7 +6,11 @@ The returned function accepts a sentence. If the sentence contains the `fromWord
 
 ```js
 function censor(fromWord, toWord) {
-  //  Your code goes here
+ return function(sentense){
+  if (sentence.includes(fromWord)){
+    
+  }
+ }
 }
 
 let censorSentence = censor('World', 'Sam');
@@ -49,8 +53,8 @@ The returned function accepts one parameter.
 - If the parameter is the same as the password it will return the object in which we stored the values.
 
 ```js
-function createCache() {
-  // Your code goes here
+function createCache(cb , str) {
+ return function()
 }
 
 function add10(num) {
