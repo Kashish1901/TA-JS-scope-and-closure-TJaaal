@@ -2,8 +2,12 @@
 
 ```js
 function once(cb) {
+  let isCalled = false
   return function(){
-
+  if(!isCalled){
+  cb();
+  isCalled = true;
+}
   }
 }
 
@@ -20,8 +24,14 @@ log(); // return undefinde (can't be called twice)
 
 ```js
 function once(cb , parameter) {
+   let isCalled = false
   return function(){
-    return parameter;
+  if(!isCalled){
+  cb(parameter);
+  isCalled = true;
+}else{
+      alert `You can't called it twice`
+    }
   }
 }
 
@@ -38,9 +48,15 @@ log(); // return undefinde (can't be called twice)
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
 ```js
-function once(cb) {
-  return function(...parameter){
-    return;
+function once(cb , ...parameter) {
+  let isCalled = false;
+  return function(){
+    if(!isCalled){
+      cb(...parameter);
+      isCalled = true;
+    }else{
+      alert `You can't called it twice`
+    }
   }
 }
 
@@ -54,7 +70,15 @@ log(); // return undefinde (can't be called twice)
 
 ```js
 function nTimes(cb, times, ...rest) {
-  
+  let noOfTimesCalled = 0;
+  return function(){
+    if (noOfTimesCalled >= times){
+      alert `You can't call the function more than ${times} times.`
+    }else{
+      cb(...rest);
+      noOfTimesCalled = noOfTimesCalled + 1;
+    }
+  }
 }
 
 // TEST
